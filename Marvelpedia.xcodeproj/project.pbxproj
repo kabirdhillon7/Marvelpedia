@@ -14,6 +14,9 @@
 		4886074E2AA83A350077B1E3 /* MarvelpediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886074D2AA83A350077B1E3 /* MarvelpediaTests.swift */; };
 		488607582AA83A350077B1E3 /* MarvelpediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488607572AA83A350077B1E3 /* MarvelpediaUITests.swift */; };
 		4886075A2AA83A350077B1E3 /* MarvelpediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488607592AA83A350077B1E3 /* MarvelpediaUITestsLaunchTests.swift */; };
+		488607682AA8412B0077B1E3 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488607672AA8412B0077B1E3 /* APICaller.swift */; };
+		4886076C2AA842090077B1E3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886076B2AA842090077B1E3 /* Character.swift */; };
+		4886076E2AA930BB0077B1E3 /* CharacterDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886076D2AA930BB0077B1E3 /* CharacterDataWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,10 @@
 		488607532AA83A350077B1E3 /* MarvelpediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelpediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		488607572AA83A350077B1E3 /* MarvelpediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelpediaUITests.swift; sourceTree = "<group>"; };
 		488607592AA83A350077B1E3 /* MarvelpediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelpediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		488607662AA840C00077B1E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		488607672AA8412B0077B1E3 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		4886076B2AA842090077B1E3 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		4886076D2AA930BB0077B1E3 /* CharacterDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDataWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +101,11 @@
 		4886073B2AA83A340077B1E3 /* Marvelpedia */ = {
 			isa = PBXGroup;
 			children = (
+				4886076A2AA841F20077B1E3 /* Models */,
+				488607692AA841EC0077B1E3 /* Networking */,
+				488607662AA840C00077B1E3 /* Info.plist */,
 				4886073C2AA83A340077B1E3 /* MarvelpediaApp.swift */,
+				488607672AA8412B0077B1E3 /* APICaller.swift */,
 				4886073E2AA83A340077B1E3 /* ContentView.swift */,
 				488607402AA83A350077B1E3 /* Assets.xcassets */,
 				488607422AA83A350077B1E3 /* Preview Content */,
@@ -125,6 +136,22 @@
 				488607592AA83A350077B1E3 /* MarvelpediaUITestsLaunchTests.swift */,
 			);
 			path = MarvelpediaUITests;
+			sourceTree = "<group>";
+		};
+		488607692AA841EC0077B1E3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4886076A2AA841F20077B1E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4886076B2AA842090077B1E3 /* Character.swift */,
+				4886076D2AA930BB0077B1E3 /* CharacterDataWrapper.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +285,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4886073F2AA83A340077B1E3 /* ContentView.swift in Sources */,
+				488607682AA8412B0077B1E3 /* APICaller.swift in Sources */,
 				4886073D2AA83A340077B1E3 /* MarvelpediaApp.swift in Sources */,
+				4886076E2AA930BB0077B1E3 /* CharacterDataWrapper.swift in Sources */,
+				4886076C2AA842090077B1E3 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +450,7 @@
 				DEVELOPMENT_TEAM = SBCRL8SBBK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Marvelpedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +480,7 @@
 				DEVELOPMENT_TEAM = SBCRL8SBBK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Marvelpedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4886073D2AA83A340077B1E3 /* MarvelpediaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886073C2AA83A340077B1E3 /* MarvelpediaApp.swift */; };
+		4886073F2AA83A340077B1E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886073E2AA83A340077B1E3 /* ContentView.swift */; };
+		488607412AA83A350077B1E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488607402AA83A350077B1E3 /* Assets.xcassets */; };
+		488607442AA83A350077B1E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488607432AA83A350077B1E3 /* Preview Assets.xcassets */; };
+		4886074E2AA83A350077B1E3 /* MarvelpediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886074D2AA83A350077B1E3 /* MarvelpediaTests.swift */; };
+		488607582AA83A350077B1E3 /* MarvelpediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488607572AA83A350077B1E3 /* MarvelpediaUITests.swift */; };
+		4886075A2AA83A350077B1E3 /* MarvelpediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488607592AA83A350077B1E3 /* MarvelpediaUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4886074A2AA83A350077B1E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 488607312AA83A340077B1E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488607382AA83A340077B1E3;
+			remoteInfo = Marvelpedia;
+		};
+		488607542AA83A350077B1E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 488607312AA83A340077B1E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488607382AA83A340077B1E3;
+			remoteInfo = Marvelpedia;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		488607392AA83A340077B1E3 /* Marvelpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvelpedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4886073C2AA83A340077B1E3 /* MarvelpediaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelpediaApp.swift; sourceTree = "<group>"; };
+		4886073E2AA83A340077B1E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		488607402AA83A350077B1E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		488607432AA83A350077B1E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		488607492AA83A350077B1E3 /* MarvelpediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelpediaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4886074D2AA83A350077B1E3 /* MarvelpediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelpediaTests.swift; sourceTree = "<group>"; };
+		488607532AA83A350077B1E3 /* MarvelpediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelpediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		488607572AA83A350077B1E3 /* MarvelpediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelpediaUITests.swift; sourceTree = "<group>"; };
+		488607592AA83A350077B1E3 /* MarvelpediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelpediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		488607362AA83A340077B1E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488607462AA83A350077B1E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488607502AA83A350077B1E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		488607302AA83A340077B1E3 = {
+			isa = PBXGroup;
+			children = (
+				4886073B2AA83A340077B1E3 /* Marvelpedia */,
+				4886074C2AA83A350077B1E3 /* MarvelpediaTests */,
+				488607562AA83A350077B1E3 /* MarvelpediaUITests */,
+				4886073A2AA83A340077B1E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4886073A2AA83A340077B1E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				488607392AA83A340077B1E3 /* Marvelpedia.app */,
+				488607492AA83A350077B1E3 /* MarvelpediaTests.xctest */,
+				488607532AA83A350077B1E3 /* MarvelpediaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4886073B2AA83A340077B1E3 /* Marvelpedia */ = {
+			isa = PBXGroup;
+			children = (
+				4886073C2AA83A340077B1E3 /* MarvelpediaApp.swift */,
+				4886073E2AA83A340077B1E3 /* ContentView.swift */,
+				488607402AA83A350077B1E3 /* Assets.xcassets */,
+				488607422AA83A350077B1E3 /* Preview Content */,
+			);
+			path = Marvelpedia;
+			sourceTree = "<group>";
+		};
+		488607422AA83A350077B1E3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				488607432AA83A350077B1E3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4886074C2AA83A350077B1E3 /* MarvelpediaTests */ = {
+			isa = PBXGroup;
+			children = (
+				4886074D2AA83A350077B1E3 /* MarvelpediaTests.swift */,
+			);
+			path = MarvelpediaTests;
+			sourceTree = "<group>";
+		};
+		488607562AA83A350077B1E3 /* MarvelpediaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				488607572AA83A350077B1E3 /* MarvelpediaUITests.swift */,
+				488607592AA83A350077B1E3 /* MarvelpediaUITestsLaunchTests.swift */,
+			);
+			path = MarvelpediaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		488607382AA83A340077B1E3 /* Marvelpedia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4886075D2AA83A350077B1E3 /* Build configuration list for PBXNativeTarget "Marvelpedia" */;
+			buildPhases = (
+				488607352AA83A340077B1E3 /* Sources */,
+				488607362AA83A340077B1E3 /* Frameworks */,
+				488607372AA83A340077B1E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Marvelpedia;
+			productName = Marvelpedia;
+			productReference = 488607392AA83A340077B1E3 /* Marvelpedia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		488607482AA83A350077B1E3 /* MarvelpediaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488607602AA83A350077B1E3 /* Build configuration list for PBXNativeTarget "MarvelpediaTests" */;
+			buildPhases = (
+				488607452AA83A350077B1E3 /* Sources */,
+				488607462AA83A350077B1E3 /* Frameworks */,
+				488607472AA83A350077B1E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4886074B2AA83A350077B1E3 /* PBXTargetDependency */,
+			);
+			name = MarvelpediaTests;
+			productName = MarvelpediaTests;
+			productReference = 488607492AA83A350077B1E3 /* MarvelpediaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		488607522AA83A350077B1E3 /* MarvelpediaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488607632AA83A350077B1E3 /* Build configuration list for PBXNativeTarget "MarvelpediaUITests" */;
+			buildPhases = (
+				4886074F2AA83A350077B1E3 /* Sources */,
+				488607502AA83A350077B1E3 /* Frameworks */,
+				488607512AA83A350077B1E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				488607552AA83A350077B1E3 /* PBXTargetDependency */,
+			);
+			name = MarvelpediaUITests;
+			productName = MarvelpediaUITests;
+			productReference = 488607532AA83A350077B1E3 /* MarvelpediaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		488607312AA83A340077B1E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					488607382AA83A340077B1E3 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					488607482AA83A350077B1E3 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 488607382AA83A340077B1E3;
+					};
+					488607522AA83A350077B1E3 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 488607382AA83A340077B1E3;
+					};
+				};
+			};
+			buildConfigurationList = 488607342AA83A340077B1E3 /* Build configuration list for PBXProject "Marvelpedia" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 488607302AA83A340077B1E3;
+			productRefGroup = 4886073A2AA83A340077B1E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				488607382AA83A340077B1E3 /* Marvelpedia */,
+				488607482AA83A350077B1E3 /* MarvelpediaTests */,
+				488607522AA83A350077B1E3 /* MarvelpediaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		488607372AA83A340077B1E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488607442AA83A350077B1E3 /* Preview Assets.xcassets in Resources */,
+				488607412AA83A350077B1E3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488607472AA83A350077B1E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488607512AA83A350077B1E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		488607352AA83A340077B1E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4886073F2AA83A340077B1E3 /* ContentView.swift in Sources */,
+				4886073D2AA83A340077B1E3 /* MarvelpediaApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488607452AA83A350077B1E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4886074E2AA83A350077B1E3 /* MarvelpediaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4886074F2AA83A350077B1E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488607582AA83A350077B1E3 /* MarvelpediaUITests.swift in Sources */,
+				4886075A2AA83A350077B1E3 /* MarvelpediaUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4886074B2AA83A350077B1E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488607382AA83A340077B1E3 /* Marvelpedia */;
+			targetProxy = 4886074A2AA83A350077B1E3 /* PBXContainerItemProxy */;
+		};
+		488607552AA83A350077B1E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488607382AA83A340077B1E3 /* Marvelpedia */;
+			targetProxy = 488607542AA83A350077B1E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4886075B2AA83A350077B1E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4886075C2AA83A350077B1E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4886075E2AA83A350077B1E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Marvelpedia/Preview Content\"";
+				DEVELOPMENT_TEAM = SBCRL8SBBK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kabir.Marvelpedia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4886075F2AA83A350077B1E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Marvelpedia/Preview Content\"";
+				DEVELOPMENT_TEAM = SBCRL8SBBK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kabir.Marvelpedia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		488607612AA83A350077B1E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SBCRL8SBBK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kabir.MarvelpediaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marvelpedia.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Marvelpedia";
+			};
+			name = Debug;
+		};
+		488607622AA83A350077B1E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SBCRL8SBBK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kabir.MarvelpediaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marvelpedia.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Marvelpedia";
+			};
+			name = Release;
+		};
+		488607642AA83A350077B1E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SBCRL8SBBK;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kabir.MarvelpediaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Marvelpedia;
+			};
+			name = Debug;
+		};
+		488607652AA83A350077B1E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SBCRL8SBBK;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kabir.MarvelpediaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Marvelpedia;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		488607342AA83A340077B1E3 /* Build configuration list for PBXProject "Marvelpedia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4886075B2AA83A350077B1E3 /* Debug */,
+				4886075C2AA83A350077B1E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4886075D2AA83A350077B1E3 /* Build configuration list for PBXNativeTarget "Marvelpedia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4886075E2AA83A350077B1E3 /* Debug */,
+				4886075F2AA83A350077B1E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488607602AA83A350077B1E3 /* Build configuration list for PBXNativeTarget "MarvelpediaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488607612AA83A350077B1E3 /* Debug */,
+				488607622AA83A350077B1E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488607632AA83A350077B1E3 /* Build configuration list for PBXNativeTarget "MarvelpediaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488607642AA83A350077B1E3 /* Debug */,
+				488607652AA83A350077B1E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 488607312AA83A340077B1E3 /* Project object */;
+}

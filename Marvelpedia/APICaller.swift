@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 import CryptoKit
 
 struct APICaller {
@@ -15,43 +14,46 @@ struct APICaller {
     let publicKey = Bundle.main.infoDictionary?["PUBLIC_API_KEY"] as? String ?? ""
     let privateKey = Bundle.main.infoDictionary?["PRIVATE_API_KEY"] as? String ?? ""
     
-    // MARK: Timestamp
-    var timestamp: String {
-        return "\(Date().timeIntervalSince1970)"
-    }
-    
     // MARK: MD5 Hash
-    var md5Hash: String {
-        let input = timestamp + publicKey + privateKey
-        guard let data = input.data(using: .utf8) else {
+    func MD5(string: String) -> String {
+        guard let data = string.data(using: .utf8) else {
             return ""
         }
-        let hash = SHA512.hash(data: data)
-        
-        return hash.compactMap { String(format: "%02x", $0) }.joined()
+        let md5 = Insecure.MD5.hash(data: data)
+        return md5.compactMap { String(format: "%02hhx", $0) }.joined()
     }
     
-    /// Fetches a list of characters from the Marvel API
+    /// Fetches a list of characters from the Marvel API and returns an array of Character objects.
     ///
     /// - Returns:
-    ///     - A Publisher containing an array of Character objects and a possible Error
-    func fetchCharacters() -> AnyPublisher<[Character], Error> {
-        guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters?apikey=\(publicKey)&hash=\(md5Hash)") else {
-            return Fail(error: NSError(domain: "Invalid Url", code: 0)).eraseToAnyPublisher()
-        }
+    ///     - An array of Character objects or nil if an error occurs.
+    ///
+    func fetchCharacters(completion: @escaping ([Character]?, Error?) -> Void) {
+        let timestamp: String = String(Date().timeIntervalSince1970)
+        let hash = MD5(string: "\(timestamp)\(privateKey)\(publicKey)")
         
+        guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)") else {
+            completion(nil,nil)
+            return
+        }
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         
-        return URLSession.shared.dataTaskPublisher(for: request)
-            .map(\.data)
-            .decode(type: CharacterDataWrapper.self, decoder: JSONDecoder())
-            .map({ data in
-                guard let data = data.data else {
-                    return []
-                }
-                return data.results ?? []
-            })
-            .eraseToAnyPublisher()
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            
+            guard let data = data else {
+                return
+            }
+            let decoder = JSONDecoder()
+            
+            do {
+                let result = try decoder.decode(CharacterDataWrapper.self, from: data)
+                completion(result.data.results, nil)
+            } catch {
+                print("Error fetching characters: \(error)")
+                completion(nil, error)
+            }
+        }
+        task.resume()
     }
 }
-

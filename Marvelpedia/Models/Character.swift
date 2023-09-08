@@ -8,20 +8,22 @@
 import Foundation
 
 /// The list of characters returned by the call
-struct Character: Decodable {
+struct Character: Decodable, Hashable {
+    
     let id: Int
     let name: String
     let description: String
     let modified: Date
     let resourceURI: String
     let urls: [Url]
-    let thumbnail: Image
+    let thumbnail: Thumbnail
     let comics: ComicList
     let stories: StoryList
     let events: EventList
     let series: SeriesList
     
-    enum CodingKeys: CodingKey {
+    // MARK: Coding Keys
+    enum CodingKeys: String, CodingKey {
         case id
         case name
         case description
@@ -35,6 +37,7 @@ struct Character: Decodable {
         case series
     }
     
+    // MARK: Init Using Decoder
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -49,11 +52,20 @@ struct Character: Decodable {
         
         self.resourceURI = try container.decode(String.self, forKey: .resourceURI)
         self.urls = try container.decode([Url].self, forKey: .urls)
-        self.thumbnail = try container.decode(Image.self, forKey: .thumbnail)
+        self.thumbnail = try container.decode(Thumbnail.self, forKey: .thumbnail)
         self.comics = try container.decode(ComicList.self, forKey: .comics)
         self.stories = try container.decode(StoryList.self, forKey: .stories)
         self.events = try container.decode(EventList.self, forKey: .events)
         self.series = try container.decode(SeriesList.self, forKey: .series)
+    }
+    
+    // MARK: Hashable
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 
@@ -138,19 +150,19 @@ struct EventSummary: Decodable {
 }
 
 /// The representative image for a character
-struct Image: Decodable {
+struct Thumbnail: Decodable {
     let path: String
-    let `extension`: String
+    let fileExtension: String
     
-    enum CodingKeys: CodingKey {
+    enum CodingKeys: String, CodingKey {
         case path
-        case `extension`
+        case fileExtension = "extension"
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.path = try container.decode(String.self, forKey: .path)
-        self.extension = try container.decode(String.self, forKey: .extension)
+        self.fileExtension = try container.decode(String.self, forKey: .fileExtension)
     }
 }
 

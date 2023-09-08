@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+/// Manages the data for CharacterView
 final class CharacterViewModel: ObservableObject {
     
     // MARK: Character Array

@@ -6,5 +6,10 @@
 	<string>700147bfe441118f985aba3b07e1bcaa885c3e6b</string>
 	<key>PUBLIC_API_KEY</key>
 	<string>d4f08262ff2e80645cd9484e82741666</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

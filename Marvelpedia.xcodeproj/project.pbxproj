@@ -80,6 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4824A8DD2AABBF57002F2577 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4886073E2AA83A340077B1E3 /* CharacterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4824A8DE2AABBF5C002F2577 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				488607742AA958050077B1E3 /* CharacterViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		488607302AA83A340077B1E3 = {
 			isa = PBXGroup;
 			children = (
@@ -103,13 +119,12 @@
 		4886073B2AA83A340077B1E3 /* Marvelpedia */ = {
 			isa = PBXGroup;
 			children = (
-				4886076A2AA841F20077B1E3 /* Models */,
-				488607692AA841EC0077B1E3 /* Networking */,
-				488607662AA840C00077B1E3 /* Info.plist */,
 				4886073C2AA83A340077B1E3 /* MarvelpediaApp.swift */,
-				488607672AA8412B0077B1E3 /* APICaller.swift */,
-				4886073E2AA83A340077B1E3 /* CharacterView.swift */,
-				488607742AA958050077B1E3 /* CharacterViewModel.swift */,
+				488607692AA841EC0077B1E3 /* Networking */,
+				4886076A2AA841F20077B1E3 /* Models */,
+				4824A8DD2AABBF57002F2577 /* Views */,
+				4824A8DE2AABBF5C002F2577 /* View Models */,
+				488607662AA840C00077B1E3 /* Info.plist */,
 				488607402AA83A350077B1E3 /* Assets.xcassets */,
 				488607422AA83A350077B1E3 /* Preview Content */,
 			);
@@ -144,6 +159,7 @@
 		488607692AA841EC0077B1E3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				488607672AA8412B0077B1E3 /* APICaller.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

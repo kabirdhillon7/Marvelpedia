@@ -15,4 +15,10 @@ final class CharacterDetailViewModel: ObservableObject {
     init(character: Character) {
         self.character = character
     }
+    
+    /// An enum of different tab selection options
+    enum TabSelectionOption {
+        case comics
+        case events
+    }
 }

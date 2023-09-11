@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// The list of characters returned by the call
+/// The result of characters returned by the call
 struct Character: Decodable, Hashable {
     
     let id: Int
@@ -22,7 +22,6 @@ struct Character: Decodable, Hashable {
     let events: EventList
     let series: SeriesList
     
-    // MARK: Coding Keys
     enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -37,7 +36,6 @@ struct Character: Decodable, Hashable {
         case series
     }
     
-    // MARK: Init Using Decoder
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -263,5 +261,45 @@ struct Url: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.type = try container.decode(String.self, forKey: .type)
         self.url = try container.decode(String.self, forKey: .url)
+    }
+}
+
+/// A wrapper for the data returned by the Marvel API when fetching a list of characters.
+struct CharacterDataWrapper: Decodable {
+    let data: CharacterDataContainer
+    
+    enum CodingKeys: CodingKey {
+        case data
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.data = try container.decode(CharacterDataContainer.self, forKey: .data)
+    }
+}
+
+/// The data returned by the call.
+struct CharacterDataContainer: Decodable {
+    let offset: Int
+    let limit: Int
+    let total: Int
+    let count: Int
+    let results: [Character]
+    
+    enum CodingKeys: CodingKey {
+        case offset
+        case limit
+        case total
+        case count
+        case results
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.offset = try container.decode(Int.self, forKey: .offset)
+        self.limit = try container.decode(Int.self, forKey: .limit)
+        self.total = try container.decode(Int.self, forKey: .total)
+        self.count = try container.decode(Int.self, forKey: .count)
+        self.results = try container.decode([Character].self, forKey: .results)
     }
 }

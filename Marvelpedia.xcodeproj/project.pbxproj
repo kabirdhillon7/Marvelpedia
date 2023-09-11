@@ -21,7 +21,6 @@
 		4886075A2AA83A350077B1E3 /* MarvelpediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488607592AA83A350077B1E3 /* MarvelpediaUITestsLaunchTests.swift */; };
 		488607682AA8412B0077B1E3 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488607672AA8412B0077B1E3 /* APICaller.swift */; };
 		4886076C2AA842090077B1E3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886076B2AA842090077B1E3 /* Character.swift */; };
-		4886076E2AA930BB0077B1E3 /* CharacterDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886076D2AA930BB0077B1E3 /* CharacterDataWrapper.swift */; };
 		488607752AA958050077B1E3 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488607742AA958050077B1E3 /* CharacterViewModel.swift */; };
 		489635D62AAEC1C0009138A8 /* EventGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489635D52AAEC1C0009138A8 /* EventGridView.swift */; };
 		489635D82AAEC1F7009138A8 /* EventGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489635D72AAEC1F7009138A8 /* EventGridViewModel.swift */; };
@@ -64,7 +63,6 @@
 		488607662AA840C00077B1E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		488607672AA8412B0077B1E3 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		4886076B2AA842090077B1E3 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		4886076D2AA930BB0077B1E3 /* CharacterDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDataWrapper.swift; sourceTree = "<group>"; };
 		488607742AA958050077B1E3 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		489635D52AAEC1C0009138A8 /* EventGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventGridView.swift; sourceTree = "<group>"; };
 		489635D72AAEC1F7009138A8 /* EventGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventGridViewModel.swift; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				4886076B2AA842090077B1E3 /* Character.swift */,
-				4886076D2AA930BB0077B1E3 /* CharacterDataWrapper.swift */,
 				4824A8E72AAEAC39002F2577 /* Comic.swift */,
 				489635D92AAEC64F009138A8 /* Event.swift */,
 			);
@@ -334,7 +331,6 @@
 				489635DA2AAEC64F009138A8 /* Event.swift in Sources */,
 				4886073D2AA83A340077B1E3 /* MarvelpediaApp.swift in Sources */,
 				4824A8E02AABDF4F002F2577 /* CharacterDetailView.swift in Sources */,
-				4886076E2AA930BB0077B1E3 /* CharacterDataWrapper.swift in Sources */,
 				4824A8E22AABDF64002F2577 /* CharacterDetailViewModel.swift in Sources */,
 				489635D62AAEC1C0009138A8 /* EventGridView.swift in Sources */,
 				4824A8E82AAEAC39002F2577 /* Comic.swift in Sources */,

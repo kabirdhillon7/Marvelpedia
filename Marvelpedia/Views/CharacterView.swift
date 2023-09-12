@@ -13,6 +13,9 @@ struct CharacterView: View {
     // MARK: View Model
     @ObservedObject var characterVM = CharacterViewModel()
     
+    // MARK: View Has Appeared Check
+    @State var hasAppeared = false
+        
     // MARK: Columns for LazyVGrid
     private var columns = [GridItem(.flexible(), spacing: 1),
                            GridItem(.flexible(), spacing: 1),
@@ -36,12 +39,16 @@ struct CharacterView: View {
                                     case .empty:
                                         ProgressView()
                                     case .failure(_):
-                                        Image(systemName: "photo")
+                                        Image(systemName: "person.fill")
+                                            .resizable()
+                                            .aspectRatio(1, contentMode: .fit)
                                     @unknown default:
                                         EmptyView()
+                                            .aspectRatio(1, contentMode: .fit)
                                     }
                                 }
                                 Text(character.name)
+                                    .frame(alignment: .leading)
                                     .foregroundColor(.white)
                                     .fontWeight(.medium)
                                     .padding(.bottom, 5)
@@ -49,12 +56,28 @@ struct CharacterView: View {
                                     .font(.system(size: 12))
                                     .shadow(color: .black, radius: 5)
                             }
+                            .task {
+                                if characterVM.hasReachedEnd(of: character) && characterVM.viewState != .fetching {
+                                    characterVM.getMoreCharacters()
+                                }
+                            }
                         }
                     }
                 }
             }
-            .onAppear {
+            .task {
+                if !hasAppeared {
+                    characterVM.getCharacters()
+                    hasAppeared = true
+                }
+            }
+            .refreshable {
                 characterVM.getCharacters()
+            }
+            .overlay(alignment: .bottom) {
+                if characterVM.viewState == .fetching {
+                    ProgressView()
+                }
             }
         }
     }

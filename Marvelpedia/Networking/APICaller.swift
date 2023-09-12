@@ -28,15 +28,17 @@ struct APICaller {
     
     /// Fetches a list of characters from the Marvel API and returns an array of Character objects.
     ///
+    /// - Parameter offset: An interger which is the requested number of skipped results of the call.
     /// - Returns: An array of Character objects or nil if an error occurs.
-    func fetchCharacters(completion: @escaping ([Character]?, Error?) -> Void) {
+    func fetchCharacters(offset: Int, completion: @escaping ([Character]?, Error?) -> Void) {
         let timestamp: String = String(Date().timeIntervalSince1970)
         let hash = MD5(string: "\(timestamp)\(privateKey)\(publicKey)")
         
-        guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)") else {
+        guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)&offset=\(offset)") else {
             completion(nil,nil)
             return
         }
+        
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)

@@ -8,10 +8,11 @@
 import Foundation
 import CryptoKit
 
-struct APICaller {
+struct MarvelAPI {
     
-    // MARK: API Keys
+    /// Public API Key
     let publicKey = Bundle.main.infoDictionary?["PUBLIC_API_KEY"] as? String ?? ""
+    /// Private API Key
     let privateKey = Bundle.main.infoDictionary?["PRIVATE_API_KEY"] as? String ?? ""
     
     /// Calculates the MD5 hash of a string.

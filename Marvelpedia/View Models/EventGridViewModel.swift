@@ -15,7 +15,7 @@ final class EventGridViewModel: ObservableObject {
     @Published var events = [Event]()
     
     // MARK: Networking
-    private let apiCaller: APICaller = APICaller()
+    private let marvelCaller: MarvelAPI = MarvelAPI()
     
     init(character: Character) {
         self.character = character
@@ -25,7 +25,7 @@ final class EventGridViewModel: ObservableObject {
     ///
     /// - Parameter character: The selected character.
     func getEvents(character: Character) {
-        apiCaller.fetchEvents(id: character.id) { events, error in
+        marvelCaller.fetchEvents(id: character.id) { events, error in
             if let events = events {
                 self.events = events
             }

@@ -21,7 +21,7 @@ final class CharacterViewModel: ObservableObject {
     @Published var viewState: ViewState?
     
     // MARK: Networking
-    private let apiCaller: APICaller = APICaller()
+    private let marvelCaller: MarvelAPI = MarvelAPI()
     
     // MARK: View State enum
     enum ViewState {
@@ -33,7 +33,7 @@ final class CharacterViewModel: ObservableObject {
     /// Updates Character array with results from API call
     func getCharacters() {
         reset()
-        apiCaller.fetchCharacters(offset: offset) { characters, error in
+        marvelCaller.fetchCharacters(offset: offset) { characters, error in
             self.viewState = .loading
             
             if let characters = characters {
@@ -50,7 +50,7 @@ final class CharacterViewModel: ObservableObject {
     /// Updates Character array with additonal results from API call
     func getMoreCharacters() {
         self.offset += 20
-        apiCaller.fetchCharacters(offset: offset) { characters, error in
+        marvelCaller.fetchCharacters(offset: offset) { characters, error in
             self.viewState = .fetching
             if let characters = characters {
                 self.characters.append(contentsOf: characters)

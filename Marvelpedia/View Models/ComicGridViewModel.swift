@@ -15,7 +15,7 @@ final class ComicGridViewModel: ObservableObject {
     @Published var comics = [Comic]()
     
     // MARK: Networking
-    private let apiCaller: APICaller = APICaller()
+    private let marvelCaller: MarvelAPI = MarvelAPI()
     
     init(character: Character) {
         self.character = character
@@ -25,7 +25,7 @@ final class ComicGridViewModel: ObservableObject {
     ///
     /// - Parameter character: The selected character.
     func getComics(character: Character) {
-        apiCaller.fetchComics(id: character.id) { comics, error in
+        marvelCaller.fetchComics(id: character.id) { comics, error in
             if let comics = comics {
                 self.comics = comics
             }

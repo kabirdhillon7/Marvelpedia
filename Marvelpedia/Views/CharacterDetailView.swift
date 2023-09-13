@@ -39,7 +39,7 @@ struct CharacterDetailView: View {
                                     image.resizable()
                                         .clipShape(Circle())
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(maxWidth: 100, maxHeight: 100)
+                                        .frame(maxWidth: 80, maxHeight: 80)
                                 case .empty:
                                     ProgressView()
                                 case .failure(_):
@@ -50,20 +50,23 @@ struct CharacterDetailView: View {
                             }
                             
                         }
-                        Text(character.description)
-                            .lineLimit(2)
-                            .foregroundColor(.black)
-                            .font(.body)
+                        Spacer()
+                            .frame(height: 20)
                         
-                        Text("")
-                        Text("")
+                        Text(character.description.prefix(100))
+                            .foregroundColor(.black)
+                            .fontWeight(.regular)
+                            .frame(alignment: .leading)
+                        
+                        Spacer()
+                            .frame(height: 30)
                     }
                 }
-                .padding()
                 .groupBoxStyle(CustomGroupBox())
+                .padding()
                 
                 Spacer()
-                    .frame(height: 25)
+                    .frame(height: 30)
                 
                 // MARK: Comic/Event Tab Options
                 HStack {
@@ -72,37 +75,45 @@ struct CharacterDetailView: View {
                         selectedButton = .comics
                     } label: {
                         VStack {
-                            Image(systemName: "book")
-                                .font(.system(size: 25))
+                            Image(systemName: selectedButton == .comics ? "book.fill" : "book")
+                                .font(.system(size: 20))
+                            Spacer()
+                                .frame(height: 5)
                             Text(String(character.comics.available))
-                                .font(.system(size: 15))
+                                .font(.system(size: 10))
                                 .fontWeight(.regular)
                         }
-                        .cornerRadius(5)
-                        .padding(.leading, 15)
-                        .padding(.trailing, 15)
+                        .padding(.top, 2)
+                        .padding(.bottom, 2)
+                        .padding(.leading, 10)
+                        .padding(.trailing, 10)
                     }
+                    .cornerRadius(15)
                     .buttonStyle(CustomButtonStyle(selected: selectedButton == .comics))
                     .tint(selectedButton == .comics ? .black : Color(UIColor.lightGray))
-                    .frame(width: 150, height: 50)
+                    .frame(width: 125, height: 50)
                     
                     Button {
                         selectedButton = .events
                     } label: {
                         VStack {
-                            Image(systemName: "tv")
-                                .font(.system(size: 25))
+                            Image(systemName: selectedButton == .events ? "tv.fill" : "tv")
+                                .font(.system(size: 20))
+                            Spacer()
+                                .frame(height: 5)
                             Text(String(character.events.available))
-                                .font(.system(size: 15))
+                                .font(.system(size: 10))
                                 .fontWeight(.regular)
                         }
-                        .cornerRadius(5)
-                        .padding(.leading, 15)
-                        .padding(.trailing, 15)
+                        .padding(.top, 2)
+                        .padding(.bottom, 2)
+                        .padding(.leading, 10)
+                        .padding(.trailing, 10)
                     }
+                    .cornerRadius(15)
                     .buttonStyle(CustomButtonStyle(selected: selectedButton == .events))
                     .tint(selectedButton == .events ? .black : Color(UIColor.lightGray))
-                    .frame(width: 150, height: 50)
+                    .frame(width: 125, height: 50)
                 }
                 
                 Spacer()
@@ -124,6 +135,7 @@ struct CharacterDetailView: View {
                     Label("", systemImage: "ellipsis")
                         .foregroundColor(.black)
                 }
+                .padding(.trailing, 5)
             }
         }
     }
@@ -145,7 +157,7 @@ struct CustomGroupBox: GroupBoxStyle {
             .background(
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color.white)
-                    .shadow(radius: 2)
+                    .shadow(radius: 3)
             )
     }
 }
@@ -168,7 +180,7 @@ struct CustomButtonStyle: PrimitiveButtonStyle {
 // MARK: Navigation Controller
 extension UINavigationController {
     
-    // Remove "back" on navigation button
+    // Removes "back" on navigation button
     open override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         navigationBar.topItem?.backButtonDisplayMode = .minimal

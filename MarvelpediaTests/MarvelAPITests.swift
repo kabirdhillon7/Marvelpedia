@@ -27,28 +27,66 @@ class MockMarvelAPI: MarvelAPIDataServicing {
 }
 
 final class MarvelAPITests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    private var mockMarvelAPI: MockMarvelAPI!
+    
+    override func setUp() {
+        super.setUp()
+        mockMarvelAPI = MockMarvelAPI()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        super.tearDown()
+        mockMarvelAPI = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_MD5_shouldReturnTrue() {
+        let inputString = "testInputString"
+        let expectedHashValue = "MD5String"
+        
+        let md5Hash = mockMarvelAPI.MD5(string: inputString)
+        
+        XCTAssertEqual(md5Hash, expectedHashValue)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_fetchCharacters_shouldNotBeNil() {
+        let offset = 0
+        let expectation = XCTestExpectation(description: "Mock Fetch Characters")
+        
+        mockMarvelAPI.fetchCharacters(offset: offset) { (characters, error) in
+            XCTAssertNotNil(characters, "Characters should not be nil")
+            XCTAssertNil(error, "Error should be nil")
+            expectation.fulfill()
         }
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
+    func test_fetchComics_ShouldNotBeNil() {
+        let characterID = 123
+        let expectation = XCTestExpectation(description: "Mock Fetch Comics")
+        
+        mockMarvelAPI.fetchComics(id: characterID) { (comics, error) in
+            XCTAssertNotNil(comics, "Comics should not be nil")
+            XCTAssertNil(error, "Error should be nil")
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 5)
     }
 
+    func test_fetchEvents_shouldNotBeNil() {
+        let characterID = 456
+        let expectation = XCTestExpectation(description: "Mock Fetch Events")
+        
+        mockMarvelAPI.fetchEvents(id: characterID) { (events, error) in
+            XCTAssertNotNil(events, "Events should not be nil")
+            XCTAssertNil(error, "Error should be nil")
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
+    
 }

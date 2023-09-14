@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 /// A View that presents character details
 struct CharacterDetailView: View {
@@ -33,7 +34,7 @@ struct CharacterDetailView: View {
                             Spacer()
                             
                             let imageString = character.thumbnail.path + "." + character.thumbnail.fileExtension
-                            AsyncImage(url: URL(string: imageString)) { phase in
+                            CachedAsyncImage(url: URL(string: imageString), urlCache: .imageCache) { phase in
                                 switch phase {
                                 case .success(let image):
                                     image.resizable()

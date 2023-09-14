@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 /// A View that presents a grid of Marvel characters
 struct CharacterView: View {
@@ -30,14 +31,17 @@ struct CharacterView: View {
                         
                         NavigationLink(destination: CharacterDetailView(characterDetailVM: CharacterDetailViewModel(character: character))) {
                             ZStack(alignment: .bottomLeading) {
-                                AsyncImage(url: URL(string: imageUrlString)) { phase in
+                                
+                                CachedAsyncImage(url: URL(string: imageUrlString), urlCache: .imageCache) { phase in
                                     switch phase {
                                     case .success(let image):
                                         image
                                             .resizable()
                                             .aspectRatio(1, contentMode: .fit)
                                     case .empty:
-                                        ProgressView()
+                                        Image(systemName: "person.fill")
+                                            .resizable()
+                                            .aspectRatio(1, contentMode: .fit)
                                     case .failure(_):
                                         Image(systemName: "person.fill")
                                             .resizable()
@@ -47,6 +51,7 @@ struct CharacterView: View {
                                             .aspectRatio(1, contentMode: .fit)
                                     }
                                 }
+                                
                                 Text(character.name)
                                     .frame(alignment: .leading)
                                     .foregroundColor(.white)
@@ -87,4 +92,9 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterView()
     }
+}
+
+extension URLCache {
+    
+    static let imageCache = URLCache(memoryCapacity: 512_000_000, diskCapacity: 10_000_000_000)
 }

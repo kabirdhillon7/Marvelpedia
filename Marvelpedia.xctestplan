@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "50B9A37A-9D4D-4581-AB95-A1F0D7B107BD",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Marvelpedia.xcodeproj",
+        "identifier" : "488607482AA83A350077B1E3",
+        "name" : "MarvelpediaTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Marvelpedia.xcodeproj",
+        "identifier" : "488607522AA83A350077B1E3",
+        "name" : "MarvelpediaUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

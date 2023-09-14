@@ -75,9 +75,9 @@ final class CharacterViewModel: ObservableObject {
     /// Resets the the Character array, offset, and viewState
     func reset() {
         if viewState == .finished {
-            characters.removeAll()
-            offset = 0
-            viewState = nil
+            self.characters = []
+            self.offset = 0
+            self.viewState = nil
         }
     }
 }

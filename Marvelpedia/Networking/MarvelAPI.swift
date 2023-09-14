@@ -8,6 +8,35 @@
 import Foundation
 import CryptoKit
 
+/// A protocol that defines the methods for accessing data from the Marvel API.
+protocol MarvelAPIDataServicing {
+    
+    /// Calculates the MD5 hash of a string.
+    ///
+    /// - Parameter string: The string to calculate the MD5 hash of.
+    /// - Returns: The MD5 hash of the string.
+    func MD5(string: String) -> String
+    
+    /// Fetches a list of characters from the Marvel API.
+    ///
+    /// - Parameter offset: The offset of the first character to fetch.
+    /// - Parameter completion: A completion handler that is called with the results of the fetch operation.
+    func fetchCharacters(offset: Int, completion: @escaping ([Character]?, Error?) -> Void)
+    
+    /// Fetches a list of comics from the Marvel API.
+    ///
+    /// - Parameter id: The ID of the character to fetch comics for.
+    /// - Parameter completion: A completion handler that is called with the results of the fetch operation.
+    func fetchComics(id: Int, completion: @escaping ([Comic]?, Error?) -> Void)
+    
+    /// Fetches a list of events from the Marvel API.
+    /// 
+    /// - Parameter id: The ID of the character to fetch events for.
+    /// - Parameter completion: A completion handler that is called with the results of the fetch operation.
+    func fetchEvents(id: Int, completion: @escaping ([Event]?, Error?) -> Void)
+}
+
+/// A struct that defines the methods for accessing data from the Marvel API.
 struct MarvelAPI {
     
     /// Public API Key

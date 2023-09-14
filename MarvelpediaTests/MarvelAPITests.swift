@@ -1,14 +1,32 @@
 //
-//  MarvelpediaTests.swift
+//  MarvelAPITests.swift
 //  MarvelpediaTests
 //
-//  Created by Kabir Dhillon on 9/5/23.
+//  Created by Kabir Dhillon on 9/13/23.
 //
 
 import XCTest
 @testable import Marvelpedia
 
-final class MarvelpediaTests: XCTestCase {
+class MockMarvelAPI: MarvelAPIDataServicing {
+    
+    func MD5(string: String) -> String {
+        return "MD5String"
+    }
+    
+    func fetchCharacters(offset: Int, completion: @escaping ([Character]?, Error?) -> Void) {
+        completion([Character](),nil)
+    }
+    func fetchComics(id: Int, completion: @escaping ([Comic]?, Error?) -> Void) {
+        completion([Comic](),nil)
+    }
+    
+    func fetchEvents(id: Int, completion: @escaping ([Event]?, Error?) -> Void) {
+        completion([Event](),nil)
+    }
+}
+
+final class MarvelAPITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

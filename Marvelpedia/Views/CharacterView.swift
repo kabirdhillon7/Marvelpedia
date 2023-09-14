@@ -94,6 +94,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+// MARK: URL Cache
 extension URLCache {
     
     static let imageCache = URLCache(memoryCapacity: 512_000_000, diskCapacity: 10_000_000_000)

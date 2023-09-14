@@ -30,7 +30,7 @@ final class CharacterViewModelTests: XCTestCase {
         
         XCTAssertNotNil(characterVM.$characters)
     }
-        
+    
     func test_getMoreCharacter_shouldNotBeNil() {
         characterVM.getMoreCharacters()
         
@@ -48,5 +48,5 @@ final class CharacterViewModelTests: XCTestCase {
         XCTAssertTrue(characterVM.viewState == nil)
     }
     
-
+    
 }

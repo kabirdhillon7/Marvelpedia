@@ -65,7 +65,7 @@ struct MarvelAPI {
         let hash = MD5(string: "\(timestamp)\(privateKey)\(publicKey)")
         
         guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)&offset=\(offset)") else {
-            completion(nil,nil)
+            completion(nil, NSError(domain: "Invalid URL", code: 0))
             return
         }
         
@@ -100,7 +100,7 @@ struct MarvelAPI {
         
         
         guard let url = URL(string: "https://gateway.marvel.com:443/v1/public/characters/\(id)/comics?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)") else {
-            completion(nil,nil)
+            completion(nil, NSError(domain: "Invalid URL", code: 0))
             return
         }
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -134,7 +134,7 @@ struct MarvelAPI {
         
         
         guard let url = URL(string: "https://gateway.marvel.com:443/v1/public/characters/\(id)/events?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)") else {
-            completion(nil,nil)
+            completion(nil, NSError(domain: "Invalid URL", code: 0))
             return
         }
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)

@@ -36,6 +36,14 @@ protocol MarvelAPIDataServicing {
     func fetchEvents(id: Int, completion: @escaping ([Event]?, Error?) -> Void)
 }
 
+/// An enum that defines errors for the Marvel API
+enum MarvelAPIError: Error {
+    case invalidURL
+    case networkError
+    case jsonDecodeError
+    case marvelAPIError(code: Int, message: String)
+}
+
 /// A struct that defines the methods for accessing data from the Marvel API.
 struct MarvelAPI {
     
@@ -65,7 +73,7 @@ struct MarvelAPI {
         let hash = MD5(string: "\(timestamp)\(privateKey)\(publicKey)")
         
         guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)&offset=\(offset)") else {
-            completion(nil, NSError(domain: "Invalid URL", code: 0))
+            completion(nil, MarvelAPIError.invalidURL)
             return
         }
         
@@ -75,6 +83,7 @@ struct MarvelAPI {
         let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             
             guard let data = data else {
+                completion(nil, MarvelAPIError.networkError)
                 return
             }
             let decoder = JSONDecoder()
@@ -83,8 +92,8 @@ struct MarvelAPI {
                 let result = try decoder.decode(CharacterDataWrapper.self, from: data)
                 completion(result.data.results, nil)
             } catch {
-                print("Error fetching characters: \(error)")
-                completion(nil, error)
+                print("\(MarvelAPIError.jsonDecodeError) -- Error fetching characters: \(error)")
+                completion(nil, MarvelAPIError.jsonDecodeError)
             }
         }
         task.resume()
@@ -100,7 +109,7 @@ struct MarvelAPI {
         
         
         guard let url = URL(string: "https://gateway.marvel.com:443/v1/public/characters/\(id)/comics?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)") else {
-            completion(nil, NSError(domain: "Invalid URL", code: 0))
+            completion(nil, MarvelAPIError.invalidURL)
             return
         }
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -108,6 +117,7 @@ struct MarvelAPI {
         let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             
             guard let data = data else {
+                completion(nil, MarvelAPIError.networkError)
                 return
             }
             let decoder = JSONDecoder()
@@ -117,7 +127,7 @@ struct MarvelAPI {
                 completion(dataWrapper.data.results, error)
                 
             } catch {
-                print("Error fetching comics: \(error)")
+                print("\(MarvelAPIError.jsonDecodeError) -- Error fetching comics: \(error)")
                 completion(nil, error)
             }
         }
@@ -134,7 +144,7 @@ struct MarvelAPI {
         
         
         guard let url = URL(string: "https://gateway.marvel.com:443/v1/public/characters/\(id)/events?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)") else {
-            completion(nil, NSError(domain: "Invalid URL", code: 0))
+            completion(nil, MarvelAPIError.invalidURL)
             return
         }
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -142,6 +152,7 @@ struct MarvelAPI {
         let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             
             guard let data = data else {
+                completion(nil, MarvelAPIError.networkError)
                 return
             }
             let decoder = JSONDecoder()
@@ -151,8 +162,8 @@ struct MarvelAPI {
                 completion(dataWrapper.data.results, error)
                 
             } catch {
-                print("Error fetching events: \(error)")
-                completion(nil, error)
+                print("\(MarvelAPIError.jsonDecodeError) -- Error fetching events: \(error)")
+                completion(nil, MarvelAPIError.jsonDecodeError)
             }
         }
         task.resume()

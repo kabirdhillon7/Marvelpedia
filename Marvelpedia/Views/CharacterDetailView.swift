@@ -54,10 +54,10 @@ struct CharacterDetailView: View {
                         Spacer()
                             .frame(height: 20)
                         
-                        Text(character.description.prefix(100))
+                        Text(character.description.count <= 100 ? character.description : String("\(character.description.prefix(100))..."))
                             .foregroundColor(.black)
                             .fontWeight(.regular)
-                            .frame(alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Spacer()
                             .frame(height: 30)
